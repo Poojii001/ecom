@@ -11,9 +11,11 @@ import TestimonialPage from './Pages/TestimonialPAge'
 import FaqPage from './Pages/FaqPage'
 import ContactUsPage from './Pages/ContactUsPage'
 import Error404Page from './Pages/Error404Page'
+
 import PrivicyPolicyPage from './Pages/Policies/PrivicyPolicyPage'
 import TermsAndConditions from './Pages/Policies/TermsAndConditions'
 
+import SignupPage from './Pages/User/SignupPage'
 
 export default function App() {
   return (
@@ -31,6 +33,8 @@ export default function App() {
 
               <Route path='/privicy-policy' element={<PrivicyPolicyPage/>}/>
               <Route path='/terms-conditions' element={<TermsAndConditions/>}/>
+
+              <Route path='/signup' element={<SignupPage/>}/>
               
               <Route path='/*' element={<Error404Page/>}/>
               
