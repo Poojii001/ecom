@@ -19,6 +19,7 @@ import SignupPage from './Pages/User/SignupPage'
 import LoginPage from './Pages/User/LoginPage'
 import ProfilePage from './Pages/User/ProfilePage'
 import CartPage from './Pages/User/CartPage'
+import CheckoutPage from './Pages/User/CheckoutPage'
 
 export default function App() {
   return (
@@ -43,6 +44,7 @@ export default function App() {
         {/* User Routes */}
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/cart' element={<CartPage />} />
+        <Route path='/checkout' element={<CheckoutPage />} />
 
 
         <Route path='/*' element={<Error404Page />} />
