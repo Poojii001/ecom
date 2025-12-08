@@ -18,6 +18,7 @@ import TermsAndConditions from './Pages/Policies/TermsAndConditions'
 import SignupPage from './Pages/User/SignupPage'
 import LoginPage from './Pages/User/LoginPage'
 import ProfilePage from './Pages/User/ProfilePage'
+import CartPage from './Pages/User/CartPage'
 
 export default function App() {
   return (
@@ -38,7 +39,11 @@ export default function App() {
 
         <Route path='/signup' element={<SignupPage />} />
         <Route path='/login' element={<LoginPage />} />
+
+        {/* User Routes */}
         <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/cart' element={<CartPage />} />
+
 
         <Route path='/*' element={<Error404Page />} />
 
