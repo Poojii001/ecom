@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   return (
@@ -8,12 +9,15 @@ export default function Navbar() {
         <div className="header-top-section">
             <div className="container">
                 <div className="header-top">
-                    <div className="header-profile">
-                        <a href="user-profile.html"><span>Account</span></a>
-                        <a href="order.html"><span>Track Order</span></a>
-                        <a href="faq.html"><span>Support</span></a>
+                    <div className="header-contact">
+                        <Link to={''}><span className='contact-number me-4'><i className='bi bi-facebook fs-2'></i></span></Link>
+                        <Link to={''}><span className='contact-number me-4'><i className='bi bi-twitter fs-2'></i></span></Link>
+                        <Link to={''}><span className='contact-number me-4'><i className='bi bi-instagram fs-2'></i></span></Link>
+                        <Link to={''}><span className='contact-number me-4'><i className='bi bi-linkedin fs-2'></i></span></Link>
+                        <Link to={''}><span className='contact-number me-4'><i className='bi bi-github fs-2'></i></span></Link>
+                        
                     </div>
-                    <div className="header-contact d-none d-lg-block">
+                    <div className="header-contact">
                         <a href="#">
                             <span>Need help? Call us:</span>
                             <span className="contact-number">+ 00645 4568</span>
