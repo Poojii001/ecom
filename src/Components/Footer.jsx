@@ -116,7 +116,7 @@ export default function Footer() {
               <div className="col-lg-3 col-sm-6">
                 <div className="footer-order">
                   <div className="logo">
-                    <img src="assets/images/logos/footer-logo.webp" alt="logo"/>
+                    <img src="/images/logos/logo-dark.png" style={{height:90}} alt="logo"/>
                   </div>
                   <div className="footer-link order-link">
                     <ul>
