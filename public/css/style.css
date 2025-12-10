@@ -1410,15 +1410,23 @@ button {
 }
 
 .hero-slider-one {
-  background: url("../assets/images/homepage-one/hero-slider-one.webp") no-repeat center/cover;
+  background: url("/images/banner1.jpg") no-repeat center/cover;
 }
 
 .hero-slider-two {
-  background: url("../assets/images/homepage-one/hero-slider-two.webp") no-repeat center/cover;
+  background: url("/images/banner2.jpg") no-repeat center/cover;
 }
 
 .hero-slider-three {
-  background: url("../assets/images/homepage-one/hero-slider-three.webp") no-repeat center/cover;
+  background: url("/images/banner4.jpg") no-repeat center/cover;
+}
+
+.hero-slider-four{
+  background: url("/images/banner12.jpg") no-repeat center/cover;
+}
+
+.hero-slider-three {
+  background: url("/images/banner11.jpg") no-repeat center/cover;
 }
 
 @media (max-width:767px) {
@@ -1684,7 +1692,7 @@ button {
 }
 
 .wrapper-one {
-  background: url("../assets/images/homepage-one/syle-bg-one.webp") no-repeat center/cover;
+  background: url("../assets/images/homepage-one/style-bg-one.webp") no-repeat center/cover;
 }
 .wrapper-one .shop-btn {
   padding: 1.2rem 3.4rem;
@@ -4605,10 +4613,7 @@ table .ticket-row:hover {
 }
 .testimonial-wrapper .testimonial-details {
   font-size: 1.8rem;
-  color: #797979;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  color: #797979/images/banner1.jpg-webkit-box-orient: vertical;
   overflow: hidden;
 }
 .testimonial-wrapper .testimonial-details .testimonial-inner-text {
