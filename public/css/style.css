@@ -127,6 +127,9 @@ input {
 input[type=checkbox] {
   accent-color: #AE1C9A;
 }
+.mybackground{
+  background-color: #AE1C9A;
+}
 
 button {
   border: none;
@@ -1406,27 +1409,32 @@ button {
   align-items: center;
   justify-content: center;
   gap: 0px;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .hero-slider-one {
-  background: url("/images/banner1.jpg") no-repeat center/cover;
+  background: gray url("/images/banner1.jpg") no-repeat center/cover;
+  background-blend-mode: multiply;
 }
 
 .hero-slider-two {
-  background: url("/images/banner2.jpg") no-repeat center/cover;
+  background: gray url("/images/banner2.jpg") no-repeat center/cover;
+  background-blend-mode: multiply;
 }
 
 .hero-slider-three {
-  background: url("/images/banner4.jpg") no-repeat center/cover;
+  background: gray url("/images/banner4.jpg") no-repeat center/cover;
+  background-blend-mode: multiply;
 }
 
 .hero-slider-four{
-  background: url("/images/banner12.jpg") no-repeat center/cover;
+  background: gray url("/images/banner11.jpg") no-repeat center/cover;
+  background-blend-mode: multiply;
 }
 
-.hero-slider-three {
-  background: url("/images/banner11.jpg") no-repeat center/cover;
+.hero-slider-five {
+  background: gray url("/images/banner12.jpg") no-repeat center/cover;
+  background-blend-mode: multiply;
 }
 
 @media (max-width:767px) {
@@ -1450,6 +1458,7 @@ button {
 .wrapper-section .wrapper-subtitle {
   font-size: 2.4rem;
   margin-bottom: 1.4rem;
+  padding-top: 100px;
 }
 .wrapper-section .wrapper-subtitle .wrapper-inner-title {
   font-size: 4rem;
@@ -2476,7 +2485,7 @@ button {
   padding-top: 6rem;
 }
 .footer-section .logo {
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
 }
 .footer-section .footer-heading {
   font-size: 2rem;

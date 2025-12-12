@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from 'swiper/modules';
 
@@ -11,14 +12,11 @@ import BrandSlider from '../Components/BrandSlider'
 import ProductSlider from '../Components/ProductSlider'
 import Products from '../Components/Products'
 import About from '../Components/About'
+import { Link } from 'react-router-dom';
 
 
 export default function HomePage() {
     let sliderOptions = {
-        style: {
-
-            '--swiper-pagination-color': '#fff',
-        },
         speed: 600,
 
         slidesPerView: 1,
@@ -39,62 +37,91 @@ export default function HomePage() {
         <>
 
             <section id="hero" >
-                <div className="hero-swiper" style={{margin:10}}>
-                <Swiper className="mySwiper" {...sliderOptions} style={{margin:-10}}>
-                    <SwiperSlide className='hero-wraper'>
-                        <div className="hero-slider-one" style={{height:600}}>
-                            <div className="container">
-                                <div className="col-lg-6">
-                                    <div className="wrapper-section" data-aos="fade-up">
-                                        <div className="wrapper-info">
-                                            <h5 className="wrapper-subtitle">UP TO <span className="wrapper-inner-title">70%</span> OFF
-                                            </h5>
-                                            <h1 className="wrapper-details">Fashion Collection
-                                                Summer Sale</h1>
-                                            <a href="product-sidebar.html" className="shop-btn">Shop Now</a>
+                <div className="hero-swiper">
+                    <Swiper className="mySwiper" {...sliderOptions}>
+                        <SwiperSlide className='hero-wraper'>
+                            <div className="hero-slider-one" style={{ height: 550 }}>
+                                <div className="container">
+                                    <div className="col-lg-6">
+                                        <div className="wrapper-section" data-aos="fade-up">
+                                            <div className="wrapper-info">
+                                                <h5 className="wrapper-subtitle text-light">UP TO <span className="wrapper-inner-title">70%</span> OFF
+                                                </h5>
+                                                <h4 className="wrapper-details text-light">Upgrade your wardrobe with stylish men’s outfits crafted for comfort, durability, and a sharp modern look.</h4>
+                                                <Link to="/shop?mc=Male" className="shop-btn">Shop Now</Link>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className='hero-wraper'>
-                        <div className="hero-slider-two" style={{height:600}}>
-                            <div className="container">
-                                <div className="col-lg-6">
-                                    <div className="wrapper-section">
-                                        <div className="wrapper-info">
-                                            <h5 className="wrapper-subtitle">UP TO <span className="wrapper-inner-title">70%</span> OFF
-                                            </h5>
-                                            <h1 className="wrapper-details">Fashion Collection
-                                                Summer Sale</h1>
-                                            <a href="#" className="shop-btn">Shop Now</a>
+                        </SwiperSlide>
+                        <SwiperSlide className='hero-wraper'>
+                            <div className="hero-slider-two" style={{ height: 550 }}>
+                                <div className="container">
+                                    <div className="col-lg-6">
+                                        <div className="wrapper-section">
+                                            <div className="wrapper-info">
+                                                <h5 className="wrapper-subtitle">UP TO <span className="wrapper-inner-title">70%</span> OFF
+                                                </h5>
+                                                <h4 className="wrapper-details text-light">Find your perfect style with trending woman’s clothing, premium fits, and fashion crafted for every occasion.</h4>
+                                                <Link to="/shop?mc=female" className="shop-btn">Shop Now</Link>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className='hero-wraper'>
-                        <div className="hero-slider-three" style={{height:600}}>
-                            <div className="container">
-                                <div className="col-lg-6">
-                                    <div className="wrapper-section">
-                                        <div className="wrapper-info">
-                                            <h5 className="wrapper-subtitle">UP TO <span className="wrapper-inner-title">70%</span> OFF
-                                            </h5>
-                                            <h1 className="wrapper-details">Fashion Collection
-                                                Summer Sale</h1>
-                                            <a href="#" className="shop-btn">Shop Now</a>
+                        </SwiperSlide>
+                        <SwiperSlide className='hero-wraper'>
+                            <div className="hero-slider-three" style={{ height: 550 }}>
+                                <div className="container">
+                                    <div className="col-lg-6">
+                                        <div className="wrapper-section">
+                                            <div className="wrapper-info">
+                                                <h5 className="wrapper-subtitle">UP TO <span className="wrapper-inner-title">70%</span> OFF
+                                                </h5>
+                                                <h4 className="wrapper-details text-light">Shop the latest kid’s fashion featuring top-quality styles, everyday essentials, and bold statement pieces.</h4>
+                                                <Link to="/shop?mc=kids" className="shop-btn">Shop Now</Link>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                    <div className="swiper-pagination"></div>
+                        </SwiperSlide>
+                        <SwiperSlide className='hero-wraper'>
+                            <div className="hero-slider-four" style={{ height: 550 }}>
+                                <div className="container">
+                                    <div className="col-lg-6">
+                                        <div className="wrapper-section">
+                                            <div className="wrapper-info">
+                                                <h5 className="wrapper-subtitle">UP TO <span className="wrapper-inner-title">70%</span> OFF
+                                                </h5>
+                                                <h4 className="wrapper-details text-light">Upgrade your home with modern furniture designed to bring comfort, style, and convenience together.</h4>
+                                                <Link to="/shop?mc=furniture" className="shop-btn">Shop Now</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide className='hero-wraper'>
+                            <div className="hero-slider-five" style={{ height: 550 }}>
+                                <div className="container">
+                                    <div className="col-lg-6">
+                                        <div className="wrapper-section">
+                                            <div className="wrapper-info">
+                                                <h5 className="wrapper-subtitle">UP TO <span className="wrapper-inner-title">70%</span> OFF
+                                                </h5>
+                                                <h4 className="wrapper-details text-light">Discover advanced electronics that transform your home with comfort, innovation, and timeless modern design.</h4>
+                                                <Link to="/shop?mc=electronics" className="shop-btn">Shop Now</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <div className="swiper-pagination"></div>
 
-                </Swiper>
+                    </Swiper>
                 </div>
             </section>
 
