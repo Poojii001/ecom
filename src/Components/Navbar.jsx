@@ -256,6 +256,7 @@ export default function Navbar() {
                                     <Link className='contact-number d-block' to="/faq">Faq</Link>
                                     <Link className='contact-number d-block' to="/testimonials">Testimonials</Link>
                                     <Link className='contact-number d-block' to="/contactus">Contact</Link>
+                                    <Link className='contact-number d-block' to="/profile">Admin</Link>
                                     <Link className='contact-number d-block' to="/profile">Profile</Link>
                                     <Link className='contact-number d-block' to="/login">Login</Link>
                                 </div>
@@ -930,6 +931,11 @@ export default function Navbar() {
                                     <li>
                                         <Link to="/contactus">
                                             <span className="list-text">Contact Us</span>
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/admin">
+                                            <span className="list-text">Admin</span>
                                         </Link>
                                     </li>
                                     <li>
