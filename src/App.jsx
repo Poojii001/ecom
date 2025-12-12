@@ -34,6 +34,7 @@ export default function App() {
         <Route path='/testimonial' element={<TestimonialPage />} />
         <Route path='/faq' element={<FaqPage />} />
         <Route path='/contactus' element={<ContactUsPage />} />
+       
 
         <Route path='/privicy-policy' element={<PrivicyPolicyPage />} />
         <Route path='/terms-conditions' element={<TermsAndConditions />} />
