@@ -14,6 +14,30 @@ export default function AdminHomePage() {
           </div>
           <div className="col-md-9">
             <h5 className='mybackground text-light text-center p-2'>Admin Profile</h5>
+            <table className='table table-bordered table-striped'>
+              <tbody>
+                <tr>
+                  <th>Name</th>
+                  <td>Pooja Pal</td>
+                </tr>
+                <tr>
+                  <th>User Name</th>
+                  <td>pooja</td>
+                </tr>
+                <tr>
+                  <th>Email</th>
+                  <td>poojapal5781@gmail.com</td>
+                </tr>
+                <tr>
+                  <th>Phone</th>
+                  <td>9506580566</td>
+                </tr>
+                <tr>
+                  <th>Role</th>
+                  <td>Admin</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
