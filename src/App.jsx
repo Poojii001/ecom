@@ -21,7 +21,7 @@ import ProfilePage from './Pages/User/ProfilePage'
 import CartPage from './Pages/User/CartPage'
 import CheckoutPage from './Pages/User/CheckoutPage'
 import AdminHomePage from './Pages/Admin/AdminHomePage'
-import AdminMainCategoryPage from './Pages/Admin/MainCategory/AdminMaincategoryPage'
+import AdminMaincategoryPage from './Pages/Admin/MainCategory/AdminMaincategoryPage'
 import AdminCreateMaincategoryPage from './Pages/Admin/MainCategory/AdminCreateMaincategoryPage'
 
 export default function App() {
@@ -52,12 +52,11 @@ export default function App() {
 
         {/* Admin Routes */}
         <Route path='/admin' element={<AdminHomePage />} />
-        <Route path='/admin/maincategory' element={<AdminMainCategoryPage />} />
+        <Route path='/admin/maincategory' element={<AdminMaincategoryPage />} />
+        
         <Route path='/admin/maincategory/create' element={<AdminCreateMaincategoryPage />} />
-
-
+        
         <Route path='/*' element={<Error404Page />} />
-
       </Routes>
       <Footer />
     </BrowserRouter>

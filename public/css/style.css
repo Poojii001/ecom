@@ -5916,6 +5916,11 @@ table .ticket-row:hover {
   border: 1px solid #AE1C9A;
 }
 
+.myborder{
+  border: 1px solid #AE1C9A;
+
+}
+
 .user-dashboard .nav-content .payment-section .shop-btn::after {
   display: none;
 }
