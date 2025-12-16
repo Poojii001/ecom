@@ -21,6 +21,7 @@ import ProfilePage from './Pages/User/ProfilePage'
 import CartPage from './Pages/User/CartPage'
 import CheckoutPage from './Pages/User/CheckoutPage'
 import AdminHomePage from './Pages/Admin/AdminHomePage'
+import AdminMainCategoryPage from './Pages/Admin/MainCategory/AdminMaincategoryPage'
 
 export default function App() {
   return (
@@ -48,8 +49,9 @@ export default function App() {
         <Route path='/cart' element={<CartPage />} />
         <Route path='/checkout' element={<CheckoutPage />} />
 
-
+        {/* Admin Routes */}
         <Route path='/admin' element={<AdminHomePage />} />
+        <Route path='/admin/maincategory' element={<AdminMainCategoryPage />} />
 
 
         <Route path='/*' element={<Error404Page />} />
