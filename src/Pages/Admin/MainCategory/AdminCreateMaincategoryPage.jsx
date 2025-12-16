@@ -35,7 +35,7 @@ export default function AdminCreateMaincategoryPage() {
                         <AdminSidebar />
                     </div>
                     <div className="col-md-9">
-                        <h6 className='mybackground text-light text-center p-2 fs-1'>Create Maincategory
+                        <h6 className='mybackground text-light text-center p-2 fs-1 mb-3'>Create Maincategory
                             <Link to="/admin/maincategory"><i className='bi bi-arrow-left text-light fs-1 float-end'></i></Link>
                         </h6>
                         <form onSubmit={postData}>
@@ -55,10 +55,9 @@ export default function AdminCreateMaincategoryPage() {
                                    </select>
                                 </div>
                                 <div className="col-12 mb-5">
-                                    <button className='btn btn-primary btn-lg w-100 mybackground'>Create</button>
+                                    <button className='btn btn-primary btn-lg w-100 mybackground p-3'>Create</button>
                                 </div>
                             </div>
-
                         </form>
                     </div>
                 </div>

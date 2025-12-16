@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function AdminSidebar() {
     return (
         <>
-            <div className="list-group">
+            <div className="list-group mb-5">
                 <Link to="/admin" className="list-group-item mybackground text-light" aria-current="true" ><i className='bi bi-house fs-2'></i><span className='float-end mt-2'>Home</span></Link>
                 <Link to="/admin/maincategory" className="list-group-item mybackground text-light" aria-current="true" ><i className='bi bi-card-checklist fs-2'></i><span className='float-end mt-2'>Maincategory</span></Link>
                 <Link to="/admin/subcategory" className="list-group-item mybackground text-light" aria-current="true" ><i className='bi bi-card-list fs-2'></i><span className='float-end mt-2'>Subcategory</span></Link>
