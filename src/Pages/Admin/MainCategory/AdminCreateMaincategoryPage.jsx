@@ -21,11 +21,21 @@ export default function AdminCreateMaincategoryPage() {
         let value = e.target.value
 
         setdata({ ...data, [name]: value })
+        setErrorMessage({ ...errorMessage, [name]: FormValidators(e) })
     }
 
     function postData(e) {
         e.preventDefault()
-        setShow(true)
+        let error = object.values(errorMessage).find(x => x !== "")
+        if (error)
+            setShow(true)
+        else {
+            alert(`
+                Name : ${data.name}
+                Pic : ${data.pic}
+                Status : ${data.status}
+                `)
+        }
     }
     return (
         <>
@@ -41,18 +51,18 @@ export default function AdminCreateMaincategoryPage() {
                         <form onSubmit={postData}>
                             <div className="row">
                                 <div className="col-12 mb-5">
-                                    <input type="text" name="name" placeholder='Maincategory Name' className={`form-control ${show && errorMessage.name ? 'border-danger' : 'myborder'}`} />
+                                    <input type="text" name="name" onChange={getInputData} placeholder='Maincategory Name' className={`form-control ${show && errorMessage.name ? 'border-danger' : 'myborder'}`} />
                                     {show && errorMessage.name ? <p className='text-danger'>{errorMessage.name}</p> : null}
                                 </div>
                                 <div className="col-md-6 mb-5">
-                                    <input type="file" name="pic" className={`form-control ${show && errorMessage.name ? 'border-danger' : 'myborder'}`} />
+                                    <input type="file" name="pic" onChange={getInputData} className={`form-control ${show && errorMessage.name ? 'border-danger' : 'myborder'}`} />
                                     {show && errorMessage.pic ? <p className='text-danger'>{errorMessage.pic}</p> : null}
                                 </div>
                                 <div className="col-md-6 mb-5">
-                                   <select name="status" className='form-select myborder'>
-                                    <option value="1">Yes</option>
-                                    <option value="0">No</option>
-                                   </select>
+                                    <select name="status" onChange={getInputData} className='form-select myborder'>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
                                 </div>
                                 <div className="col-12 mb-5">
                                     <button className='btn btn-primary btn-lg w-100 mybackground p-3'>Create</button>
