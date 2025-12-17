@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import AdminSidebar from '../../../Components/Admin/AdminSidebar'
 import { Link } from 'react-router-dom'
 import FormValidators from '../../../Validators/FormValidators'
+import ImageValidators from '../../../Validators/ImageValidators'
 
 
 export default function AdminCreateMaincategoryPage() {
@@ -19,10 +20,10 @@ export default function AdminCreateMaincategoryPage() {
 
     function getInputData(e) {
         let name = e.target.name
-        let value = e.target.value
+        let value = name==="pic"?e.target.files[0].name:e.target.value
 
-        setdata({ ...data, [name]: value })
-        setErrorMessage({ ...errorMessage, [name]: FormValidators(e) })
+        setdata({ ...data, [name]: name==="status"? (value==="1"? true : false):value })
+        setErrorMessage({ ...errorMessage, [name]: name === "pic" ? ImageValidators(e) : FormValidators(e) })
     }
 
     function postData(e) {
