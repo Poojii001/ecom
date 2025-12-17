@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import AdminSidebar from '../../../Components/Admin/AdminSidebar'
 import { Link } from 'react-router-dom'
+import FormValidators from '../../../Validators/FormValidators'
 
 
 export default function AdminCreateMaincategoryPage() {
@@ -26,7 +27,7 @@ export default function AdminCreateMaincategoryPage() {
 
     function postData(e) {
         e.preventDefault()
-        let error = object.values(errorMessage).find(x => x !== "")
+        let error = Object.values(errorMessage).find(x => x !== "")
         if (error)
             setShow(true)
         else {
