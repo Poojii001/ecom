@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ImageValidators() {
+export default function ImageValidators(e) {
     let files = e.target.files
     if (files.length === 1) {
         let pic = files[0]
