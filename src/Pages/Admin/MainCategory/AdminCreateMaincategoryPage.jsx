@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
 
 import AdminSidebar from '../../../Components/Admin/AdminSidebar'
 import { Link, useNavigate } from 'react-router-dom'
@@ -7,6 +8,9 @@ import ImageValidators from '../../../Validators/ImageValidators'
 
 
 export default function AdminCreateMaincategoryPage() {
+
+    let [MaincategoryStateData, setMaincategoryStateData] = useState([])
+
     let [data, setdata] = useState({
         name: "",
         pic: "",
@@ -38,11 +42,18 @@ export default function AdminCreateMaincategoryPage() {
             //     Pic : ${data.pic}
             //     Status : ${data.status}
             //     `)
+
+            let item = MaincategoryStateData.find(x => x.name.toLocaleLowerCase() === data.name.toLocaleLowerCase())
+            if(item){
+                setErrorMessage({...errorMessage, name: "Maincategory With This Name Already Exist" })
+                setShow(true)
+                return
+            }
             let response = await fetch(`${import.meta.env.VITE_APP_BACKEND_SERVER}/maincategory`, {
                 method: "POST",
                 headers: {
-                    "content-type": "application/json"
-                    // "authorization":"your auth key"
+                    "content-type": "application/json",
+                    // "authorization":"Your Auth key"
                 },
                 body: JSON.stringify({ ...data })
             })
@@ -50,6 +61,18 @@ export default function AdminCreateMaincategoryPage() {
             navigate("/admin/maincategory")
         }
     }
+    useEffect(() => {
+        (async () => {
+          let response = await fetch(`${import.meta.env.VITE_APP_BACKEND_SERVER}/maincategory`, {
+            method: "GET",
+            headers: {
+              "content-type": "application/json",
+            }
+          })
+          response = await response.json()
+          setMaincategoryStateData(response)
+        })()
+      }, [])
     return (
         <>
             <div className='container-fluid my-3'>

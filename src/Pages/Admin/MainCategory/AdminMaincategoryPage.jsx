@@ -7,6 +7,20 @@ import { Link } from 'react-router-dom'
 export default function AdminMaincategoryPage() {
   let [data, setData] = useState([])
 
+  async function deleteRecord(id) {
+    if (window.confirm("Are You Sure You Want To Delete That Record :")) {
+      let response = await fetch(`${import.meta.env.VITE_APP_BACKEND_SERVER}/maincategory/${id}`, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+          // "authorization":"your auth key"
+        }
+      })
+      response = await response.json()
+      setData(data.filter(x => x.id !== id))
+    }
+  }
+
   useEffect(() => {
     (async () => {
       let response = await fetch(`${import.meta.env.VITE_APP_BACKEND_SERVER}/maincategory`, {
@@ -29,11 +43,11 @@ export default function AdminMaincategoryPage() {
             <AdminSidebar />
           </div>
           <div className="col-md-9">
-            <h6 className='mybackground text-light text-center p-2 fs-1'>Main Category
-              <Link to="create"><i className='bi bi-plus text-light fs-1 float-end'></i></Link>
+            <h6 className='mybackground text-light text-center p-2 fs-1 mb-3'>Main Category
+              <Link to="/admin/maincategory/create"><i className='bi bi-plus text-light fs-1 float-end'></i></Link>
             </h6>
 
-            <div className='table-responsive'>
+             <div className='table-responsive'>
               <table className='table table-bordered'>
                 <thead>
                   <tr>
@@ -51,13 +65,14 @@ export default function AdminMaincategoryPage() {
                       <td>{item.id}</td>
                       <td>{item.name}</td>
                       <td>
-                        <a href={`${import.meta.env.VITE_APP_IMAGE_SERVER}${item.pic}`} target='_blank'>
+                        <Link to={`${import.meta.env.VITE_APP_IMAGE_SERVER}${item.pic}`} target='_blank'>
                           <img src={`${import.meta.env.VITE_APP_IMAGE_SERVER}${item.pic}`} height={70} width={100} alt="" />
-                        </a>
+                        </Link>
                       </td>
+                      {/* <td>{item.pic}</td> */}
                       <td>{item.status ? "Active" : "Inactive"}</td>
                       <td></td>
-                      <td></td>
+                      <td><button className='btn btn-danger' onClick={()=>deleteRecord(item.id)}><i className='bi bi-trash fs-3'></i></button></td>
                     </tr>
                   })}
                 </tbody>
