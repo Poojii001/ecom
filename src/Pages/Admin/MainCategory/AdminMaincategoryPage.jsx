@@ -71,7 +71,7 @@ export default function AdminMaincategoryPage() {
                       </td>
                       {/* <td>{item.pic}</td> */}
                       <td>{item.status ? "Active" : "Inactive"}</td>
-                      <td></td>
+                      <td><Link to={`/admin/maincategory/update/${item.id}`} className='btn btn-primary mybackground'><i className='bi bi-pencil fs-3'></i></Link></td>
                       <td><button className='btn btn-danger' onClick={()=>deleteRecord(item.id)}><i className='bi bi-trash fs-3'></i></button></td>
                     </tr>
                   })}
