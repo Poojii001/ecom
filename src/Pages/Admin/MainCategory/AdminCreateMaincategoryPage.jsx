@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import AdminSidebar from '../../../Components/Admin/AdminSidebar'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import FormValidators from '../../../Validators/FormValidators'
 import ImageValidators from '../../../Validators/ImageValidators'
 
@@ -17,26 +17,37 @@ export default function AdminCreateMaincategoryPage() {
         pic: "Pic Field is Mandatory"
     })
     let [show, setShow] = useState(false)
+    let navigate = useNavigate()
 
     function getInputData(e) {
         let name = e.target.name
-        let value = name==="pic"?e.target.files[0].name:e.target.value
+        let value = name === "pic" ? "maincategory/" + e.target.files[0].name : e.target.value
 
-        setdata({ ...data, [name]: name==="status"? (value==="1"? true : false):value })
+        setdata({ ...data, [name]: name === "status" ? (value === "1" ? true : false) : value })
         setErrorMessage({ ...errorMessage, [name]: name === "pic" ? ImageValidators(e) : FormValidators(e) })
     }
 
-    function postData(e) {
+    async function postData(e) {
         e.preventDefault()
         let error = Object.values(errorMessage).find(x => x !== "")
         if (error)
             setShow(true)
         else {
-            alert(`
-                Name : ${data.name}
-                Pic : ${data.pic}
-                Status : ${data.status}
-                `)
+            // alert(`
+            //     Name : ${data.name}
+            //     Pic : ${data.pic}
+            //     Status : ${data.status}
+            //     `)
+            let response = await fetch(`${import.meta.env.VITE_APP_BACKEND_SERVER}/maincategory`, {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                    // "authorization":"your auth key"
+                },
+                body: JSON.stringify({ ...data })
+            })
+            response = await response.json()
+            navigate("/admin/maincategory")
         }
     }
     return (
