@@ -7,7 +7,7 @@ import ImageValidators from '../../../Validators/ImageValidators'
 import AdminSidebar from '../../../Components/Admin/AdminSidebar'
 
 export default function AdminUpdateMaincategoryPage() {
-    let {id} = useParams()
+    let { id } = useParams()
     let [MaincategoryStateData, setMaincategoryStateData] = useState([])
 
     let [data, setdata] = useState({
@@ -36,15 +36,16 @@ export default function AdminUpdateMaincategoryPage() {
         if (error)
             setShow(true)
         else {
-            // alert(`
-            //     Name : ${data.name}
-            //     Pic : ${data.pic}
-            //     Status : ${data.status}
-            //     `)
-
-            let item = MaincategoryStateData.find(x => x.id !== id && (x.name.toLocaleLowerCase() === data.name.toLocaleLowerCase()))
-            if(item){
-                setErrorMessage({...errorMessage, name: "Maincategory With This Name Already Exist" })
+            // let item = MaincategoryStateData.find(x => x.id !== id && (x.name.toLocaleLowerCase() === data.name.toLocaleLowerCase()))
+            let item = Array.isArray(MaincategoryStateData)
+                ? MaincategoryStateData.find(
+                    x =>
+                        x.id !== id &&
+                        x.name.toLowerCase() === data.name.toLowerCase()
+                )
+                : null
+            if (item) {
+                setErrorMessage({ ...errorMessage, name: "Maincategory With This Name Already Exist" })
                 setShow(true)
                 return
             }
@@ -60,23 +61,46 @@ export default function AdminUpdateMaincategoryPage() {
             navigate("/admin/maincategory")
         }
     }
+    // useEffect(() => {
+    //     (async () => {
+    //       let response = await fetch(`${import.meta.env.VITE_APP_BACKEND_SERVER}/maincategory/${id}`, {
+    //         method: "GET",
+    //         headers: {
+    //           "content-type": "application/json",
+    //         }
+    //       })
+    //       response = await response.json()
+    //       setMaincategoryStateData(response)
+    //       let item = response.find(x => x.id === id)
+    //       if(item)
+    //         setdata({...data,...item})
+    //       else
+    //         navigate("/admin/maincategory")
+    //     })()
+    //   }, [])
+
     useEffect(() => {
         (async () => {
-          let response = await fetch(`${import.meta.env.VITE_APP_BACKEND_SERVER}/maincategory/${id}`, {
-            method: "GET",
-            headers: {
-              "content-type": "application/json",
+            let response = await fetch(
+                `${import.meta.env.VITE_APP_BACKEND_SERVER}/maincategory/${id}`,
+                {
+                    method: "GET",
+                    headers: {
+                        "content-type": "application/json",
+                    },
+                }
+            )
+
+            response = await response.json()
+
+            if (response) {
+                setMaincategoryStateData([response]) // keep array for later use
+                setdata({ ...data, ...response })
+            } else {
+                navigate("/admin/maincategory")
             }
-          })
-          response = await response.json()
-          setMaincategoryStateData(response)
-          let item = response.find(x => x.id === id)
-          if(item)
-            setdata({...data,...item})
-          else
-            navigate("/admin/maincategory")
         })()
-      }, [])
+    }, [id])
     return (
         <>
             <div className='container-fluid my-3'>
@@ -102,7 +126,7 @@ export default function AdminUpdateMaincategoryPage() {
                                 </div>
                                 <div className="col-md-6 mb-5">
                                     <label>Status*</label>
-                                    <select name="status" value={data.status? "1":"0"} onChange={getInputData} className='form-select myborder'>
+                                    <select name="status" value={data.status ? "1" : "0"} onChange={getInputData} className='form-select myborder'>
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
