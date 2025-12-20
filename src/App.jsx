@@ -23,6 +23,7 @@ import CheckoutPage from './Pages/User/CheckoutPage'
 import AdminHomePage from './Pages/Admin/AdminHomePage'
 import AdminMaincategoryPage from './Pages/Admin/MainCategory/AdminMaincategoryPage'
 import AdminCreateMaincategoryPage from './Pages/Admin/MainCategory/AdminCreateMaincategoryPage'
+import AdminUpdateMaincategoryPage from './Pages/Admin/MainCategory/AdminUpdateMaincatoryPage'
 
 export default function App() {
   return (
@@ -55,6 +56,7 @@ export default function App() {
         <Route path='/admin/maincategory' element={<AdminMaincategoryPage />} />
         
         <Route path='/admin/maincategory/create' element={<AdminCreateMaincategoryPage />} />
+        <Route path='/admin/maincategory/update/:id' element={<AdminUpdateMaincategoryPage />} />
         
         <Route path='/*' element={<Error404Page />} />
       </Routes>

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import FormValidators from '../../../Validators/FormValidators'
 import ImageValidators from '../../../Validators/ImageValidators'
 
 import AdminSidebar from '../../../Components/Admin/AdminSidebar'
 
-export default function AdminCreateMaincategoryPage() {
-
+export default function AdminUpdateMaincategoryPage() {
+    let {id} = useParams()
     let [MaincategoryStateData, setMaincategoryStateData] = useState([])
 
     let [data, setdata] = useState({
@@ -16,8 +16,8 @@ export default function AdminCreateMaincategoryPage() {
         status: true
     })
     let [errorMessage, setErrorMessage] = useState({
-        name: "Name Field is Mandatory",
-        pic: "Pic Field is Mandatory"
+        name: "",
+        pic: ""
     })
     let [show, setShow] = useState(false)
     let navigate = useNavigate()
@@ -42,14 +42,14 @@ export default function AdminCreateMaincategoryPage() {
             //     Status : ${data.status}
             //     `)
 
-            let item = MaincategoryStateData.find(x => x.name.toLocaleLowerCase() === data.name.toLocaleLowerCase())
+            let item = MaincategoryStateData.find(x => x.id !== id && (x.name.toLocaleLowerCase() === data.name.toLocaleLowerCase()))
             if(item){
                 setErrorMessage({...errorMessage, name: "Maincategory With This Name Already Exist" })
                 setShow(true)
                 return
             }
             let response = await fetch(`${import.meta.env.VITE_APP_BACKEND_SERVER}/maincategory`, {
-                method: "POST",
+                method: "PUT",
                 headers: {
                     "content-type": "application/json",
                     // "authorization":"Your Auth key"
@@ -62,7 +62,7 @@ export default function AdminCreateMaincategoryPage() {
     }
     useEffect(() => {
         (async () => {
-          let response = await fetch(`${import.meta.env.VITE_APP_BACKEND_SERVER}/maincategory`, {
+          let response = await fetch(`${import.meta.env.VITE_APP_BACKEND_SERVER}/maincategory/${id}`, {
             method: "GET",
             headers: {
               "content-type": "application/json",
@@ -70,6 +70,11 @@ export default function AdminCreateMaincategoryPage() {
           })
           response = await response.json()
           setMaincategoryStateData(response)
+          let item = response.find(x => x.id === id)
+          if(item)
+            setdata({...data,...item})
+          else
+            navigate("/admin/maincategory")
         })()
       }, [])
     return (
@@ -80,30 +85,30 @@ export default function AdminCreateMaincategoryPage() {
                         <AdminSidebar />
                     </div>
                     <div className="col-md-9">
-                        <h6 className='mybackground text-light text-center p-2 fs-1 mb-3'>Create Maincategory
+                        <h6 className='mybackground text-light text-center p-2 fs-1 mb-3'>Update Maincategory
                             <Link to="/admin/maincategory"><i className='bi bi-arrow-left text-light fs-1 float-end'></i></Link>
                         </h6>
                         <form onSubmit={postData}>
                             <div className="row">
                                 <div className="col-12 mb-5">
                                     <label>Name*</label>
-                                    <input type="text" name="name" onChange={getInputData} placeholder='Maincategory Name' className={`form-control ${show && errorMessage.name ? 'border-danger' : 'myborder'}`} />
+                                    <input type="text" name="name" value={data.name} onChange={getInputData} placeholder='Maincategory Name' className={`form-control ${show && errorMessage.name ? 'border-danger' : 'myborder'}`} />
                                     {show && errorMessage.name ? <p className='text-danger'>{errorMessage.name}</p> : null}
                                 </div>
                                 <div className="col-md-6 mb-5">
-                                    <label>Pic*</label>
+                                    <label>Pic</label>
                                     <input type="file" name="pic" onChange={getInputData} className={`form-control ${show && errorMessage.name ? 'border-danger' : 'myborder'}`} />
                                     {show && errorMessage.pic ? <p className='text-danger'>{errorMessage.pic}</p> : null}
                                 </div>
                                 <div className="col-md-6 mb-5">
                                     <label>Status*</label>
-                                    <select name="status" onChange={getInputData} className='form-select myborder'>
+                                    <select name="status" value={data.status? "1":"0"} onChange={getInputData} className='form-select myborder'>
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
                                 </div>
                                 <div className="col-12 mb-5">
-                                    <button className='btn btn-primary btn-lg w-100 mybackground p-3'>Create</button>
+                                    <button className='btn btn-primary btn-lg w-100 mybackground p-3'>Update</button>
                                 </div>
                             </div>
                         </form>
