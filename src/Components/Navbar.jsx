@@ -222,7 +222,7 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions">
+                    <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions">
 
                         <div className="offcanvas-body">
                             <div className="header-top">

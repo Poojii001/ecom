@@ -236,7 +236,7 @@ export default function ProfilePage() {
                             <div className="tab-content nav-content" id="v-pills-tabContent" style={{ flex: "1 0%" }}>
 
                                 <div className="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                                    aria-labelledby="v-pills-home-tab" tabindex="0">
+                                    aria-labelledby="v-pills-home-tab" tabIndex="0">
                                     <div className="user-profile">
                                         <div className="user-title">
                                             <p className="paragraph">Hello, Sajjad</p>
@@ -361,7 +361,7 @@ export default function ProfilePage() {
                                 </div>
 
                                 <div className="tab-pane fade" id="v-pills-profile" role="tabpanel"
-                                    aria-labelledby="v-pills-profile-tab" tabindex="0">
+                                    aria-labelledby="v-pills-profile-tab" tabIndex="0">
                                     <div className="seller-application-section">
                                         <div className="row ">
                                             <div className="col-lg-7">
@@ -464,7 +464,7 @@ export default function ProfilePage() {
                                 </div>
 
                                 <div className="tab-pane fade" id="v-pills-payment" role="tabpanel"
-                                    aria-labelledby="v-pills-order-tab" tabindex="0">
+                                    aria-labelledby="v-pills-order-tab" tabIndex="0">
                                     <div className="payment-section">
                                         <div className="wrapper">
                                             <div className="wrapper-item">
@@ -621,7 +621,7 @@ export default function ProfilePage() {
                                 </div>
 
                                 <div className="tab-pane fade" id="v-pills-order" role="tabpanel"
-                                    aria-labelledby="v-pills-order-tab" tabindex="0">
+                                    aria-labelledby="v-pills-order-tab" tabIndex="0">
                                     <div className="cart-section">
                                         <table>
                                             <tbody>
@@ -848,7 +848,7 @@ export default function ProfilePage() {
                                 </div>
 
                                 <div className="tab-pane fade" id="v-pills-wishlist" role="tabpanel"
-                                    aria-labelledby="v-pills-wishlist-tab" tabindex="0">
+                                    aria-labelledby="v-pills-wishlist-tab" tabIndex="0">
 
                                     <div className="wishlist">
                                         <div className="cart-content">
@@ -1004,7 +1004,7 @@ export default function ProfilePage() {
                                 </div>
 
                                 <div className="tab-pane fade" id="v-pills-address" role="tabpanel"
-                                    aria-labelledby="v-pills-address-tab" tabindex="0">
+                                    aria-labelledby="v-pills-address-tab" tabIndex="0">
                                     <div className="profile-section address-section addresses ">
                                         <div className="row gy-md-0 g-5">
                                             <div className="col-md-6">
@@ -1129,7 +1129,7 @@ export default function ProfilePage() {
                                 </div>
 
                                 <div className="tab-pane fade" id="v-pills-review" role="tabpanel"
-                                    aria-labelledby="v-pills-review-tab" tabindex="0">
+                                    aria-labelledby="v-pills-review-tab" tabIndex="0">
 
                                     <div className="top-selling-section">
                                         <div className="row g-5">
@@ -1318,7 +1318,7 @@ export default function ProfilePage() {
                                 </div>
 
                                 <div className="tab-pane fade" id="v-pills-password" role="tabpanel"
-                                    aria-labelledby="v-pills-password-tab" tabindex="0">
+                                    aria-labelledby="v-pills-password-tab" tabIndex="0">
                                     <div className="row align-items-center">
                                         <div className="col-lg-6">
                                             <div className="form-section">
@@ -1354,7 +1354,7 @@ export default function ProfilePage() {
                                 </div>
 
                                 <div className="tab-pane fade" id="v-pills-ticket" role="tabpanel"
-                                    aria-labelledby="v-pills-ticket-tab" tabindex="0">
+                                    aria-labelledby="v-pills-ticket-tab" tabIndex="0">
                                     <div className="support-ticket">
                                         <a href="#" className="shop-btn" onclick="modalAction('.ticket')">Add New Support</a>
 

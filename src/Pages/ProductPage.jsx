@@ -180,8 +180,8 @@ export default function ProductPage() {
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
                                                     d="M17 1C14.9 1 13.1 2.1 12 3.7C10.9 2.1 9.1 1 7 1C3.7 1 1 3.7 1 7C1 13 12 22 12 22C12 22 23 13 23 7C23 3.7 20.3 1 17 1Z"
-                                                    stroke="#797979" stroke-width="2" stroke-miterlimit="10"
-                                                    stroke-linecap="square" />
+                                                    stroke="#797979" strokeWidth="2" stroke-miterlimit="10"
+                                                    strokeLinecap="square" />
                                             </svg>
                                         </span>
                                     </div>
@@ -313,7 +313,7 @@ export default function ProductPage() {
                 <div className="tab-content tab-item" id="nav-tabContent">
 
                     <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-                        tabindex="0" data-aos="fade-up">
+                        tabIndex="0" data-aos="fade-up">
                         <div className="product-intro-section">
                             <h5 className="intro-heading">Introduction</h5>
                             <p className="product-details">
@@ -347,7 +347,7 @@ export default function ProductPage() {
                         </div>
                     </div>
                     <div className="tab-pane fade" id="nav-review" role="tabpanel" aria-labelledby="nav-review-tab"
-                        tabindex="0">
+                        tabIndex="0">
                         <div className="product-review-section" data-aos="fade-up">
                             <h5 className="intro-heading">Reviews</h5>
 

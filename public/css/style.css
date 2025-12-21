@@ -37,6 +37,18 @@ body {
   background: #f8f8f8;
   overflow-x: hidden;
 }
+label{
+  font-size: 16px;
+}
+input,
+select,
+button,div,span,i{
+  font-size: 16px;
+}
+
+.dt-paging-button{
+  font-size: 2rem !important;
+}
 
 h1,
 h2,
@@ -906,7 +918,7 @@ button {
 }
 
 .offcanvas-body .header-top .shop-btn .btn-close {
-  --bs-btn-close-bg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="%23FFF" width="24px" height="24px"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>');
+  --bs-btn-close-bg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="%23FFF" width="24px" height="24px"><path strokeLinecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>');
   font-size: 2rem;
 }
 
@@ -4063,11 +4075,11 @@ table {
   width: 100%;
 }
 
-tr,
+/* tr,
 th,
 td {
   font-size: 1.8rem !important;
-}
+} */
 
 table .ticket-row {
   background: #FFFFFF;
